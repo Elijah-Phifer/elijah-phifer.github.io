@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elijah Phifer - Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -16,11 +20,45 @@
       padding: 20px;
       text-align: center;
     }
+    .intro-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 40px 0;
+      padding: 20px;
+    }
+    .intro-section img {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .intro-text {
+      text-align: center;
+    }
+    .section-title {
+      margin: 40px 0 20px;
+      text-align: center;
+      color: #343a40;
+    }
     .container-custom {
       padding: 40px 20px;
     }
     .card {
       margin: 20px 0;
+    }
+    .rss-card-body {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .rss-link {
+      text-decoration: none;
+      color: #007bff;
+    }
+    .rss-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -55,20 +93,27 @@
     </div>
   </nav>
 
-  <!-- Header -->
-  <div class="header">
-    <h1>Elijah Phifer</h1>
-    <p>PhD Aspirant | Computer Scientist | Researcher</p>
+  <!-- Introduction Section -->
+  <div class="intro-section">
+    <img src="assets/images/IMG_9652.jpeg" alt="Elijah Phifer">
+    <div class="intro-text">
+      <h1>Elijah Phifer</h1>
+      <p>
+        I'm a Computer Science PhD aspirant with a passion for researching uncertainty and quantifying data in limited environments.
+        My work explores the intersections of machine learning, game theory, and computational science, with a focus on real-world applications.
+        I aim to create cutting-edge research that pushes boundaries and contributes to the development of impactful technologies.
+      </p>
+    </div>
   </div>
 
-  <!-- Latest Updates Section -->
+  <!-- Content Section -->
   <div class="container container-custom">
     <h2 class="section-title">Latest Updates</h2>
     <div class="row">
       <!-- Medium Blog Section -->
       <div class="col-md-6">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body rss-card-body">
             <h5 class="card-title">Latest Medium Blog</h5>
             <p class="card-text" id="medium-posts">Fetching latest Medium post...</p>
           </div>
@@ -78,7 +123,7 @@
       <!-- Podcast Section -->
       <div class="col-md-6">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body rss-card-body">
             <h5 class="card-title">Latest Podcast Episode</h5>
             <p class="card-text" id="podcast-episode">Fetching latest podcast episode...</p>
           </div>
@@ -90,7 +135,7 @@
   <!-- Medium Blog RSS Feed Script -->
   <script>
     async function fetchMediumRSS() {
-      const rssUrl = 'https://medium.com/feed/@ephifer21'; // Replace @yourusername with your Medium username
+      const rssUrl = 'https://medium.com/feed/@yourusername'; // Replace @yourusername with your Medium username
       const proxyUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl);
 
       try {
@@ -99,9 +144,9 @@
         if (data.status === 'ok') {
           const latestPost = data.items[0]; // Gets the latest post
           document.getElementById('medium-posts').innerHTML = `
-            <strong><a href="${latestPost.link}" target="_blank">${latestPost.title}</a></strong><br>
+            <strong><a href="${latestPost.link}" target="_blank" class="rss-link">${latestPost.title}</a></strong><br>
             ${latestPost.pubDate.split(' ')[0]}<br>
-            ${latestPost.description.substring(0, 100)}... <a href="${latestPost.link}" target="_blank">Read more</a>
+            ${latestPost.description.substring(0, 100)}... <a href="${latestPost.link}" target="_blank" class="rss-link">Read more</a>
           `;
         } else {
           document.getElementById('medium-posts').innerText = "Could not fetch Medium posts.";
@@ -118,7 +163,7 @@
   <!-- Podcast RSS Feed Script -->
   <script>
     async function fetchPodcastRSS() {
-      const rssUrl = 'https://feeds.simplecast.com/54nAGcIl'; // Replace with your podcast's RSS feed URL
+      const rssUrl = 'https://feeds.simplecast.com/54nAGcIl'; // Temporary podcast RSS feed
       const proxyUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl);
 
       try {
@@ -127,9 +172,9 @@
         if (data.status === 'ok') {
           const latestEpisode = data.items[0]; // Gets the latest episode
           document.getElementById('podcast-episode').innerHTML = `
-            <strong><a href="${latestEpisode.link}" target="_blank">${latestEpisode.title}</a></strong><br>
+            <strong><a href="${latestEpisode.link}" target="_blank" class="rss-link">${latestEpisode.title}</a></strong><br>
             ${latestEpisode.pubDate.split(' ')[0]}<br>
-            ${latestEpisode.description.substring(0, 100)}... <a href="${latestEpisode.link}" target="_blank">Listen now</a>
+            ${latestEpisode.description.substring(0, 100)}... <a href="${latestEpisode.link}" target="_blank" class="rss-link">Listen now</a>
           `;
         } else {
           document.getElementById('podcast-episode').innerText = "Could not fetch podcast episode.";
