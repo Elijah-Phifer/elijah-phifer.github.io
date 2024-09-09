@@ -5,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elijah Phifer - Research</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -20,16 +16,47 @@
       padding: 20px;
       text-align: center;
     }
+    .section-title {
+      text-align: center;
+      margin: 40px 0;
+      color: #343a40;
+    }
+    .container-custom {
+      padding: 40px 20px;
+    }
+    .card {
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      background-color: #ffffff;
+    }
+    .project-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+    .focus-areas {
+      margin-bottom: 40px;
+    }
+    .project, .publication {
+      padding: 15px;
+    }
     .research-section {
-      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .publication {
+      width: 48%;
+    }
+    .project {
+      width: 48%;
     }
   </style>
 </head>
-
-
 <body>
-  
-    <!-- Navigation Bar -->
+
+  <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">Elijah Phifer</a>
@@ -58,28 +85,72 @@
     </div>
   </nav>
 
+  <!-- Header -->
   <div class="header">
-    <h1>Research Interests</h1>
-    <p>Elijah Phifer</p>
+    <h1>Research</h1>
+    <p>Exploring the intersections of AI, uncertainty, and data science</p>
   </div>
 
-  <div class="research-section container">
-    <h2>Focus Areas</h2>
-    <p>My primary research interests include the following:</p>
-    <ul>
-      <li>Uncertainty Quantification</li>
-      <li>AI in limited-data environments</li>
-      <li>Game theory and Simulation</li>
-    </ul>
+  <!-- Focus Areas -->
+  <div class="container container-custom">
+    <div class="card focus-areas">
+      <div class="card-body">
+        <h2 class="card-title">Focus Areas</h2>
+        <p>My research primarily focuses on:</p>
+        <ul>
+          <li>Uncertainty Quantification</li>
+          <li>AI in limited-data environments</li>
+          <li>Game theory and Simulation</li>
+          <li>Data-driven decision making</li>
+        </ul>
+      </div>
+    </div>
 
-    <h3>Recent Projects</h3>
-    <p>Here are some key projects:</p>
-    <ul>
-      <li>Game Theory Simulation using CADE</li>
-      <li>AI-driven Fitness App</li>
-      <li>Enlightden Study Buddy App</li>
-    </ul>
+    <!-- Publications and Projects -->
+    <div class="research-section">
+      <!-- Publications Section -->
+      <div class="publication">
+        <h3 class="section-title">Publications</h3>
+        <div class="card">
+          <div class="card-body">
+            <p><a href="link-to-publication-1" target="_blank">Phifer, E., et al. (2023). Title of the Paper 1. <i>Journal Name</i>, 12(3), pp. 123-134.</a></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <p><a href="link-to-publication-2" target="_blank">Phifer, E., et al. (2022). Title of the Paper 2. <i>Journal Name</i>, 11(4), pp. 221-230.</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <div class="project">
+        <h3 class="section-title">Projects</h3>
+        <div class="card">
+          <img src="assets/project-image-1.jpg" alt="Project Image 1" class="project-img">
+          <div class="card-body">
+            <h4 class="card-title">Enlightden Study App</h4>
+            <p class="card-text">An AI-powered study platform designed to help first-generation students with personalized study plans and resources.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/project-image-2.jpg" alt="Project Image 2" class="project-img">
+          <div class="card-body">
+            <h4 class="card-title">AI Fitness Planning</h4>
+            <p class="card-text">An AI-driven fitness application that generates customized fitness plans based on user preferences and past performance.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/project-image-3.jpg" alt="Project Image 3" class="project-img">
+          <div class="card-body">
+            <h4 class="card-title">Game Theory Simulator</h4>
+            <p class="card-text">A simulation platform testing the evolution of cooperation or selfishness in game theory scenarios using agent-based modeling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
