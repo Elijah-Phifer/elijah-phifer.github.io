@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elijah Phifer - Home</title>
+  <title>Elijah Phifer - CV</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
@@ -16,16 +16,16 @@
       padding: 20px;
       text-align: center;
     }
-    .section-title {
-      margin: 40px 0 20px;
-      text-align: center;
-      color: #343a40;
+    .cv-section {
+      padding: 20px 40px;
     }
-    .container-custom {
-      padding: 40px 20px;
+    .download-btn {
+      margin-top: 20px;
     }
-    .card {
-      margin: 20px 0;
+    .iframe-container {
+      width: 100%;
+      height: 800px;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -61,43 +61,24 @@
   </nav>
 
   <!-- Content Section -->
-  <div class="container container-custom">
-    <h2 class="section-title">Latest Updates</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Latest LinkedIn Posts</h5>
-            <p class="card-text" id="linkedin-posts">Fetching latest posts...</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Latest Medium Blog</h5>
-            <p class="card-text" id="medium-posts">Fetching latest post...</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Latest Podcast Episode</h5>
-            <p class="card-text" id="podcast-episode">Fetching latest episode...</p>
-          </div>
-        </div>
-      </div>
+  <div class="header">
+    <h1>Curriculum Vitae</h1>
+    <p>Elijah Phifer</p>
+  </div>
+
+  <div class="cv-section container">
+    <h2>View My CV</h2>
+    <p>Below is the embedded version of my CV. You can also download it as a PDF using the button below.</p>
+    
+    <!-- Embed PDF -->
+    <div class="iframe-container">
+      <iframe src="docs/cv.pdf" width="100%" height="100%" frameborder="0"></iframe>
     </div>
+
+    <!-- Download Button -->
+    <a href="docs/cv.pdf" download="ElijahPhifer_CV.pdf" class="btn btn-primary download-btn">Download CV (PDF)</a>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // LinkedIn, Medium, Podcast API integrations here
-    document.getElementById('linkedin-posts').innerText = "LinkedIn API needed.";
-    document.getElementById('medium-posts').innerText = "Medium API or RSS feed needed.";
-    document.getElementById('podcast-episode').innerText = "Podcast embed or API needed.";
-  </script>
-  
 </body>
 </html>
