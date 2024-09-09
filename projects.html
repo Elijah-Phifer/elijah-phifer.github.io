@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elijah Phifer - Projects</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -20,14 +19,44 @@
       padding: 20px;
       text-align: center;
     }
-    .projects-section {
-      padding: 20px 40px;
+    .container-custom {
+      padding: 40px 20px;
+    }
+    .project-card {
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      background-color: #ffffff;
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+    .project-body {
+      padding: 20px;
+    }
+    .project-title {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    .project-description {
+      margin-bottom: 15px;
+    }
+    .project-links a {
+      text-decoration: none;
+      color: #007bff;
+      margin-right: 10px;
+    }
+    .project-links a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  
-    <!-- Navigation Bar -->
+
+  <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">Elijah Phifer</a>
@@ -56,19 +85,115 @@
     </div>
   </nav>
 
+  <!-- Header -->
   <div class="header">
     <h1>Projects</h1>
-    <p>Elijah Phifer</p>
+    <p>Explore my recent work</p>
   </div>
 
-  <div class="projects-section container">
-    <h2>Recent Work</h2>
-    <ul>
-      <li>Enlightden Study App - An AI-powered study platform</li>
-      <li>AI Fitness Planning - Customized fitness plans using machine learning</li>
-      <li>Game Theory Simulator - A simulation to test the evolution of selfishness or cooperation</li>
-    </ul>
+  <!-- Projects Section -->
+  <div class="container container-custom">
+
+    <!-- Project 1 -->
+    <div class="card project-card">
+      <div id="carouselProject1" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/project-image-1-1.jpg" class="d-block w-100" alt="Project Image 1.1">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/project-image-1-2.jpg" class="d-block w-100" alt="Project Image 1.2">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/project-image-1-3.jpg" class="d-block w-100" alt="Project Image 1.3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProject1" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselProject1" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="card-body project-body">
+        <h3 class="project-title">Enlightden Study App</h3>
+        <p class="project-description">An AI-powered study platform designed to help first-generation students with personalized study plans and hands-on learning tools. The app creates mind maps and AI-generated quizzes to optimize learning based on individual needs.</p>
+        <div class="project-links">
+          <a href="https://github.com/enlightden-study-app" target="_blank">View on GitHub</a>
+          <a href="https://enlightden.app" target="_blank">Visit Website</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="card project-card">
+      <div id="carouselProject2" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/project-image-2-1.jpg" class="d-block w-100" alt="Project Image 2.1">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/project-image-2-2.jpg" class="d-block w-100" alt="Project Image 2.2">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/project-image-2-3.jpg" class="d-block w-100" alt="Project Image 2.3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProject2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselProject2" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="card-body project-body">
+        <h3 class="project-title">AI Fitness Planning</h3>
+        <p class="project-description">An AI-driven fitness app that uses machine learning to customize fitness plans based on user preferences, fitness goals, and past performance. This tool continuously adjusts difficulty and recommendations to optimize user progress.</p>
+        <div class="project-links">
+          <a href="https://github.com/ai-fitness-planning" target="_blank">View on GitHub</a>
+          <a href="https://aifitnessplanning.com" target="_blank">Visit Website</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="card project-card">
+      <div id="carouselProject3" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/project-image-3-1.jpg" class="d-block w-100" alt="Project Image 3.1">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/project-image-3-2.jpg" class="d-block w-100" alt="Project Image 3.2">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/project-image-3-3.jpg" class="d-block w-100" alt="Project Image 3.3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProject3" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselProject3" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="card-body project-body">
+        <h3 class="project-title">Game Theory Simulator</h3>
+        <p class="project-description">A simulation tool designed to test the evolution of cooperation versus selfishness using game theory principles. The simulator allows users to create scenarios and observe agent interactions over time.</p>
+        <div class="project-links">
+          <a href="https://github.com/game-theory-simulator" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
