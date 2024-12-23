@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elijah Phifer - Projects</title>
+  <title>Elijah Phifer - Research and Projects</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
@@ -19,34 +19,34 @@
     .container-custom {
       padding: 40px 20px;
     }
-    .project-card {
+    .project-card, .research-card {
       margin: 20px 0;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       border-radius: 10px;
       background-color: #ffffff;
     }
-    .project-card img {
+    .project-card img, .research-card img {
       width: 100%;
       height: 300px;
       object-fit: cover;
       border-radius: 10px 10px 0 0;
     }
-    .project-body {
+    .project-body, .research-body {
       padding: 20px;
     }
-    .project-title {
+    .project-title, .research-title {
       font-size: 1.5em;
       margin-bottom: 10px;
     }
-    .project-description {
+    .project-description, .research-description {
       margin-bottom: 15px;
     }
-    .project-links a {
+    .project-links a, .research-links a {
       text-decoration: none;
       color: #007bff;
       margin-right: 10px;
     }
-    .project-links a:hover {
+    .project-links a:hover, .research-links a:hover {
       text-decoration: underline;
     }
   </style>
@@ -81,54 +81,82 @@
 
   <!-- Header -->
   <div class="header">
-    <h1>Projects</h1>
-    <p>Explore my recent work</p>
+    <h1>Research and Projects</h1>
+    <p>Explore my work and research interests</p>
   </div>
 
-  <!-- Projects Section -->
+  <!-- Content Section -->
   <div class="container container-custom">
+    <div class="row">
+      <!-- Research Section -->
+      <div class="col-lg-6">
+        <h2>Research</h2>
+        <!-- Research Template Card 1 -->
+        <div class="card research-card">
+          <img src="assets/images/research_placeholder.png" alt="Research Placeholder">
+          <div class="card-body research-body">
+            <h3 class="research-title">Research Title 1</h3>
+            <p class="research-description">Description of the research topic. This is a placeholder for future research projects.</p>
+            <div class="research-links">
+              <a href="#" target="_blank">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- Research Template Card 2 -->
+        <div class="card research-card">
+          <img src="assets/images/research_placeholder.png" alt="Research Placeholder">
+          <div class="card-body research-body">
+            <h3 class="research-title">Research Title 2</h3>
+            <p class="research-description">Description of the research topic. This is a placeholder for future research projects.</p>
+            <div class="research-links">
+              <a href="#" target="_blank">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <!-- Project 1 -->
-    <div class="card project-card">
-      <img style="object-fit: cover;" src="assets/images/enlightden_showcase.png" alt="Enlightden Study App">
-      <div class="card-body project-body">
-        <h3 class="project-title">Enlightden</h3>
-        <p class="project-description">An AI-powered study platform designed to help first-generation students with personalized study plans and hands-on learning tools. The app creates mind maps and AI-generated quizzes to optimize learning based on individual needs.</p>
-        <div class="project-links">
-          <a href="https://github.com/Elijah-Phifer/EnlightDen" target="_blank">View on GitHub</a>
+      <!-- Projects Section -->
+      <div class="col-lg-6">
+        <h2>Projects</h2>
+        <!-- Project 1 -->
+        <div class="card project-card">
+          <img src="assets/images/enlightden_showcase.png" alt="Enlightden Study App">
+          <div class="card-body project-body">
+            <h3 class="project-title">Enlightden</h3>
+            <p class="project-description">An AI-powered study platform designed to help first-generation students with personalized study plans and hands-on learning tools. The app creates mind maps and AI-generated quizzes to optimize learning based on individual needs.</p>
+            <div class="project-links">
+              <a href="https://github.com/Elijah-Phifer/EnlightDen" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card project-card">
+          <img src="assets/images/Planet_orbit_animation.png" alt="PlanetSim.jl">
+          <div class="card-body project-body">
+            <h3 class="project-title">PlanetSim.jl</h3>
+            <p class="project-description">A Julia package for simulating planet orbits from customizable starting conditions.</p>
+            <div class="project-links">
+              <a href="https://github.com/Elijah-Phifer/PlanetSim.jl" target="_blank">View on GitHub</a>
+              <a href="docs/PlanetSim.jl_ An Interactive Julia-Based N-Body Simulation Tool for Educational Applications.pdf" target="_blank">Read Paper</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="card project-card">
+          <img src="assets/images/getagrip_pic.png" alt="Get a Grip">
+          <div class="card-body project-body">
+            <h3 class="project-title">Get-A-Grip</h3>
+            <p class="project-description">A fully 3D-printed robotic hand offering dual control options: operate it seamlessly via a remote glove or through a custom-designed Android application.</p>
+            <div class="project-links">
+              <a href="https://github.com/sechols223/Get-a-Grip" target="_blank">View on GitHub</a>
+              <a href="docs/Get A Grip_ Integrating Flexibility and Function in Economically Designed Robotic Hands.pdf" target="_blank">Read Paper</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Project 2 -->
-    <div class="card project-card" style="margin: 20px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; background-color: #ffffff;">
-      <img src="assets/images/Planet_orbit_animation.png" alt="PlanetSim.jl" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px 10px 0 0;">
-      <div class="card-body project-body" style="padding: 20px;">
-        <h3 class="project-title" style="font-size: 1.5em; margin-bottom: 10px;">PlanetSim.jl</h3>
-        <p class="project-description" style="margin-bottom: 15px;">A Julia package for simulating planet orbits from customizable starting conditions</p>
-        <div class="project-links">
-          <a href="https://github.com/Elijah-Phifer/PlanetSim.jl" target="_blank" style="text-decoration: none; color: #007bff; margin-right: 10px;">View on GitHub</a>
-          <a href="docs/PlanetSim.jl_ An Interactive Julia-Based N-Body Simulation Tool for Educational Applications.pdf" target="_blank" style="text-decoration: none; color: #007bff;">Read Paper</a>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Project 3 -->
-     
-    <div class="card project-card">
-      <img src="assets/images/getagrip_pic.png" alt="Get a Grip">
-      <div class="card-body project-body">
-        <h3 class="project-title">Get-A-Grip</h3>
-        <p class="project-description">A fully 3D-printed robotic hand offering dual control options: operate it seamlessly via a remote glove or through a custom-designed Android application.</p>
-        <div class="project-links">
-          <a href="https://github.com/sechols223/Get-a-Grip" target="_blank">View on GitHub</a>
-          <a href="docs/Get A Grip_ Integrating Flexibility and Function in Economically Designed Robotic Hands.pdf" target="_blank" style="text-decoration: none; color: #007bff;">Read Paper</a>
-        </div>
-      </div>
-    </div>
-
-    
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
