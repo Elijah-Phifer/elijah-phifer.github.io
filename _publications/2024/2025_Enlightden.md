@@ -9,12 +9,12 @@ pub_pre:        "Submitted to CCSC SE 2025"
 # pub_date:       "2024"
 
 abstract: >-
-  With the help of federal student aid, higher education has become
+  "With the help of federal student aid, higher education has become
 more financially attainable, allowing more students than ever the oppor-
 tunity for economic upward mobility. However, while financial access to
 higher education may be improving, there is still a systemic void of sup-
 port for learners of disadvantaged backgrounds, including students who
-can be described as\: nontraditional, low socio-economic status, or hav-
+can be described as: nontraditional, low socio-economic status, or hav-
 ing certain learning disabilities. These students often lack study skills,
 educational support (i.e. tutoring), and expendable time to dedicate to
 school due to time consuming responsibilities (i.e. maintaining a job to
@@ -24,7 +24,7 @@ involves a decline in reading literacy and math skills raise concerns about
 having to deal with an emerging national security issue and a situation
 that may limit the growth of the US economy in the future. EnlightDen
 uses AI to provide a personalized learning experience that addresses gaps
-in a student’s academic support system by focusing on individual needs.
+in a student’s academic support system by focusing on individual needs."
 # cover:          /assets/images/covers/cover3.jpg
 authors:
   - Elijah Phifer
