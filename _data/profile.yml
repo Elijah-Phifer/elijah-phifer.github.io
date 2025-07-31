@@ -1,11 +1,11 @@
-primary_name: "Your Name"
+primary_name: "Elijah Phifer"
 secondary_name: ""
-navbar_name: "Your Name"
+navbar_name: "Elijah Phifer"
 
 positions:
-- logo: /assets/images/badges/NRLlogo.png  # Logo is optional
-  name: Graduate Intern at the U.S. Naval Research Laboratory 
-- name: Research Assistant at Louisiana State University under the RISE Lab
+- logo: /assets/images/badges/tiger_logo.png  # Logo is optional
+  name: Research Assistant at Louisiana State University under the RISE Lab
+- name: Graduate STEM Student Intern at the U.S. Naval Research Laboratory 
 
 
 email: "elijah.phifer@lsu.edu"
@@ -22,40 +22,44 @@ github: Elijah-Phifer
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    A <a href="https://en.wikipedia.org/wiki/Bicolor_cat" target="_blank">bicolor cat</a> is a cat with white fur combined with fur of some other colour, for example solid black, tabby, or colourpointed.
+    I'm currently a first-year PhD student in Computer Science at <a href="https://www.lsu.edu/eng/cse/index.php" target="_blank">Louisiana State University (LSU)</a>, 
+      with an interest in research at the intersection of software engineering and robotics.   
   </p>
   <p>
-    There are various patterns of a bicolour cat. These range from the Van-patterned (colour on the crown of the head 
-    and the tail only) to a solid colour with a throat locket or medallion. Bicolour coats are found in many cat breeds, 
-    as well as being common in domestic longhair and domestic shorthair cats.
+     
+    My primary interests lie in Human-Robot Interaction (HRI) and human-machine teams, 
+      particularly exploring how we can enable more intuitive and effective collaboration. 
+    A core area of my work focuses on conversational robot programming, 
+      investigating how natural language and dialogue can empower users to program robots with greater ease and flexibility.
+   
   </p>
 
-portrait_url: /assets/images/photos/portrait.jpg
+portrait_url: /assets/images/photos/3887EB5E-1140-4393-A8EA-A09361D968C1_1_102_o.jpeg
 portrait_caption: >-
-  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
+  My headshot from when I was a tutor at Southeastern Louisiana University!
 
 education:
 - name: Louisiana State University
   logo: /assets/images/badges/tiger_logo.png
   position: >- 
-    Department of Computer Science <br/>
+    Department of Computer Science and Engineering <br/>
     Ph.D. Student
   date: Aug. 2025 - present
 - name: Southeastern Louisiana University
   logo: /assets/images/badges/lion_logo.png
-  position: B.S. in Computer Science
+  position: B.S. in Computer Science, Math Minor
   date: Aug. 2021 - May. 2025
 
-# experience:
-# - name: Peking University
-#   logo: /assets/images/badges/PKU_red.png
-#   position: Research Intern
-#   date: Sep. 2019 - Jul. 2021
+experience:
+- name: Southeastern Louisiana University
+  logo: /assets/images/badges/lion_logo.png
+  position: Research Intern
+  date: Sep. 2019 - Jul. 2021
 
 awards:
-- name: Award Name 2
+- name: Senior Tutor Leadership Award
+  date: 2025
+- name: Thirteen Club Honors Recognition
   date: 2024
-- name: Award Name 1 
-  date: 2021
-- name: A quick brown fox jumps over the lazy dog and runs away award
-  date: 2021
+- name: Thomas F. Higginbotham Scholarship Award
+  date: 2024
