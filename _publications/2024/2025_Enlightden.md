@@ -14,7 +14,7 @@ more financially attainable, allowing more students than ever the oppor-
 tunity for economic upward mobility. However, while financial access to
 higher education may be improving, there is still a systemic void of sup-
 port for learners of disadvantaged backgrounds, including students who
-can be described as: nontraditional, low socio-economic status, or hav-
+can be described as\: nontraditional, low socio-economic status, or hav-
 ing certain learning disabilities. These students often lack study skills,
 educational support (i.e. tutoring), and expendable time to dedicate to
 school due to time consuming responsibilities (i.e. maintaining a job to
