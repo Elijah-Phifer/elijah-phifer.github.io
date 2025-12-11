@@ -17,11 +17,11 @@ function generatePages() {
   container.innerHTML += `
     <div class="page cover">
       <div class="menu-hint">
-        <div class="menu-hint-text">Click here for navigation</div>
         <svg class="curved-arrow" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M10 70 Q50 10, 85 25" stroke="#AD9B9A" stroke-width="2" fill="none"/>
           <path d="M85 25 L80 15 M85 25 L75 25" stroke="#AD9B9A" stroke-width="2" stroke-linecap="round"/>
         </svg>
+        <div class="menu-hint-text">Click here for table of contents</div>
       </div>
       <div class="cover-content">
         <h1>${portfolioData.title}</h1>
