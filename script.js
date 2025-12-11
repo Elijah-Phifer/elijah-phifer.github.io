@@ -372,11 +372,42 @@ function initializeNavigation() {
   const dots = document.querySelectorAll('.dot');
 
   function updatePage() {
-    const offset = -currentPage * window.innerWidth;
-    container.style.transform = `translateX(${offset}px)`;
+    if (!isMobile) {
+      const offset = -currentPage * window.innerWidth;
+      container.style.transform = `translateX(${offset}px)`;
+    }
     
     dots.forEach((dot, i) => {
       dot.classList.toggle('active', i === currentPage);
+    });
+  }
+
+  // Mobile scroll detection to update dots
+  if (isMobile) {
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        // Calculate which page is most visible
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        let newCurrentPage = 0;
+        
+        pages.forEach((page, index) => {
+          const pageTop = page.offsetTop;
+          const pageBottom = pageTop + page.offsetHeight;
+          
+          if (scrollPosition >= pageTop && scrollPosition < pageBottom) {
+            newCurrentPage = index;
+          }
+        });
+        
+        if (newCurrentPage !== currentPage) {
+          currentPage = newCurrentPage;
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentPage);
+          });
+        }
+      }, 100);
     });
   }
 
