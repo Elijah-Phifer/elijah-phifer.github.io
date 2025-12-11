@@ -4,7 +4,11 @@
 // ==========================
 
 // Wait for DOM to load
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+  // Load blog posts first
+  if (typeof loadBlogPosts !== 'undefined') {
+    await loadBlogPosts();
+  }
   generatePages();
   initializeNavigation();
 });
@@ -16,13 +20,6 @@ function generatePages() {
   // Page 1: Cover
   container.innerHTML += `
     <div class="page cover">
-      <div class="menu-hint">
-        <svg class="curved-arrow" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 70 Q50 10, 85 25" stroke="#AD9B9A" stroke-width="2" fill="none"/>
-          <path d="M85 25 L80 15 M85 25 L75 25" stroke="#AD9B9A" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <div class="menu-hint-text">Click here for table of contents</div>
-      </div>
       <div class="cover-content">
         <h1>${portfolioData.title}</h1>
         <div class="issue">Volume I · Issue I · December 2024</div>
@@ -260,6 +257,42 @@ function generatePages() {
       </p>
     </div>
   `;
+
+  // Page 12: Blog List
+  if (typeof allBlogPosts !== 'undefined' && allBlogPosts.length > 0) {
+    container.innerHTML += `
+      <div class="page light" id="blog-list-page">
+        <div class="masthead">
+          <h1>${portfolioData.title}</h1>
+          <div class="subtitle">${portfolioData.subtitle}</div>
+        </div>
+
+        <div class="section-title">Blog</div>
+
+        <p style="margin-bottom: 30px;">
+          Thoughts, updates, and reflections on research, technology, and the academic journey.
+        </p>
+
+        <div class="blog-list">
+          ${allBlogPosts.map(post => `
+            <article class="blog-list-item" data-blog-id="${post.id}">
+              ${post.featuredImage ? `
+                <div class="blog-thumbnail">
+                  <img src="${post.featuredImage}" alt="${post.title}">
+                </div>
+              ` : ''}
+              <div class="blog-info">
+                <div class="blog-date">${formatBlogDate(post.date)}</div>
+                <h3 class="blog-title">${post.title}</h3>
+                <p class="blog-excerpt">${post.excerpt}</p>
+                <a href="#" class="read-more" data-blog-id="${post.id}">Read more →</a>
+              </div>
+            </article>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
 }
 
 // Initialize navigation
@@ -289,7 +322,8 @@ function initializeNavigation() {
     { title: 'Recent Happenings', page: 7 },
     { title: 'Publications', page: 8 },
     { title: 'Research Notes', page: 9 },
-    { title: 'Gallery', page: 10 }
+    { title: 'Gallery', page: 10 },
+    { title: 'Blog', page: 11 }
   ];
 
   // Build table of contents
@@ -408,5 +442,96 @@ function initializeNavigation() {
     if (isDragging) e.preventDefault();
   });
 
+  // Blog post navigation
+  setupBlogNavigation();
+
   updatePage();
 }
+
+// Blog navigation functions
+function setupBlogNavigation() {
+  // Add click handlers for "Read more" links
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('read-more')) {
+      e.preventDefault();
+      const blogId = e.target.getAttribute('data-blog-id');
+      openBlogPost(blogId);
+    }
+    
+    if (e.target.classList.contains('back-to-blog-list')) {
+      e.preventDefault();
+      closeBlogPost();
+    }
+  });
+}
+
+function openBlogPost(blogId) {
+  const post = getBlogPostById(blogId);
+  if (!post) return;
+  
+  const container = document.getElementById('container');
+  
+  // Create blog post page
+  const blogPostPage = document.createElement('div');
+  blogPostPage.className = 'page light blog-post-page';
+  blogPostPage.innerHTML = `
+    <div class="blog-post-header">
+      <a href="#" class="back-to-blog-list">← Back to Blog</a>
+    </div>
+    
+    <article class="blog-post">
+      <div class="blog-post-date">${formatBlogDate(post.date)}</div>
+      <h1 class="blog-post-title">${post.title}</h1>
+      
+      ${post.featuredImage ? `
+        <img src="${post.featuredImage.replace('w=400', 'w=1200')}" alt="${post.title}" class="blog-post-featured-image">
+      ` : ''}
+      
+      <div class="blog-post-content">
+        ${post.content}
+      </div>
+    </article>
+  `;
+  
+  // Insert after blog list page
+  const blogListPage = document.getElementById('blog-list-page');
+  blogListPage.parentNode.insertBefore(blogPostPage, blogListPage.nextSibling);
+  
+  // Navigate to the new page
+  const pages = document.querySelectorAll('.page');
+  const blogListIndex = Array.from(pages).indexOf(blogListPage);
+  
+  // Trigger navigation to show the blog post
+  setTimeout(() => {
+    const event = new CustomEvent('navigateToBlogPost', { detail: { pageIndex: blogListIndex + 1 } });
+    document.dispatchEvent(event);
+  }, 100);
+}
+
+function closeBlogPost() {
+  // Remove blog post page
+  const blogPostPage = document.querySelector('.blog-post-page');
+  if (blogPostPage) {
+    blogPostPage.remove();
+  }
+  
+  // Navigate back to blog list
+  const blogListPage = document.getElementById('blog-list-page');
+  const pages = document.querySelectorAll('.page');
+  const blogListIndex = Array.from(pages).indexOf(blogListPage);
+  
+  const event = new CustomEvent('navigateToBlogPost', { detail: { pageIndex: blogListIndex } });
+  document.dispatchEvent(event);
+}
+
+// Listen for blog navigation events
+document.addEventListener('navigateToBlogPost', (e) => {
+  const container = document.getElementById('container');
+  const pages = document.querySelectorAll('.page');
+  const targetPage = e.detail.pageIndex;
+  
+  container.style.transform = `translateX(-${targetPage * 100}vw)`;
+  
+  const indicator = document.getElementById('indicator');
+  indicator.textContent = `${targetPage + 1} / ${pages.length}`;
+});
