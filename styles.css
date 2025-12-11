@@ -725,7 +725,8 @@ body:active {
 @media (max-width: 768px) {
   body {
     cursor: auto;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   body:active {
@@ -734,17 +735,30 @@ body:active {
 
   .container {
     display: block;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+    height: auto;
+    transform: none !important;
+    transition: none !important;
   }
 
   .page {
-    padding: 30px 20px;
+    padding: 30px 20px 60px 20px;
     min-height: 100vh;
     height: auto;
-    overflow-y: visible;
-    min-width: 100%;
+    overflow: visible;
+    min-width: 100vw;
+    max-width: 100vw;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .page > * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .page img {
+    max-width: 100% !important;
+    height: auto !important;
   }
 
   .cover-content h1 {
@@ -820,6 +834,8 @@ body:active {
   .publication-item,
   .skill-category {
     margin-bottom: 25px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .image-caption {
@@ -831,6 +847,35 @@ body:active {
     font-size: 10px;
     bottom: 15px;
     left: 15px;
+  }
+
+  /* Prevent horizontal overflow on all elements */
+  .content-block,
+  .section-title,
+  .masthead,
+  .intro-text,
+  .pull-quote,
+  p, h1, h2, h3, h4, h5, h6,
+  ul, ol, li {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+  }
+
+  /* Ensure featured images fit properly */
+  .featured-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* Fix for image pages */
+  .image-page img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
   }
 
   /* Blog mobile styles */

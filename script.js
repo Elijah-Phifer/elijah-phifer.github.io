@@ -304,6 +304,8 @@ function initializeNavigation() {
   const tocOverlay = document.getElementById('tocOverlay');
   const tocList = document.getElementById('tocList');
   
+  const isMobile = window.innerWidth <= 768;
+  
   let currentPage = 0;
   let startX = 0;
   let currentX = 0;
@@ -414,15 +416,17 @@ function initializeNavigation() {
     updatePage();
   }
 
-  // Mouse events
-  container.addEventListener('mousedown', handleStart);
-  document.addEventListener('mousemove', handleMove);
-  document.addEventListener('mouseup', handleEnd);
+  // Mouse events (desktop only)
+  if (!isMobile) {
+    container.addEventListener('mousedown', handleStart);
+    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('mouseup', handleEnd);
 
-  // Touch events
-  container.addEventListener('touchstart', handleStart);
-  document.addEventListener('touchmove', handleMove);
-  document.addEventListener('touchend', handleEnd);
+    // Touch events
+    container.addEventListener('touchstart', handleStart);
+    document.addEventListener('touchmove', handleMove);
+    document.addEventListener('touchend', handleEnd);
+  }
 
   // Keyboard navigation
   document.addEventListener('keydown', (e) => {
