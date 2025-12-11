@@ -725,11 +725,18 @@ body:active {
 @media (max-width: 768px) {
   body {
     cursor: auto;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   body:active {
     cursor: auto;
+  }
+
+  .container {
+    display: block;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .page {
@@ -737,6 +744,7 @@ body:active {
     min-height: 100vh;
     height: auto;
     overflow-y: visible;
+    min-width: 100%;
   }
 
   .cover-content h1 {

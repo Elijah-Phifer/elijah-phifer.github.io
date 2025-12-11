@@ -9,33 +9,42 @@
 3. Copy the template below and edit the content:
 
 ```javascript
-const blogPost = {
-  // Unique ID (use date-based format recommended)
-  id: "2024-12-15-my-post-title",
-  
-  // Publication date (YYYY-MM-DD format)
-  date: "2024-12-15",
-  
-  // Title that appears in the list and post page
-  title: "My Amazing Blog Post",
-  
-  // Short excerpt for the blog list (1-2 sentences)
-  excerpt: "A brief description of what this post is about.",
-  
-  // Main content (HTML supported)
-  content: `
-    <p>Your blog content goes here.</p>
+(function() {
+  const blogPost = {
+    // Unique ID (use date-based format recommended)
+    id: "2024-12-15-my-post-title",
     
-    <h3>Section Title</h3>
-    <p>More content...</p>
+    // Publication date (YYYY-MM-DD format)
+    date: "2024-12-15",
     
-    <img src="path/to/image.jpg" alt="Description" style="max-width: 100%; border-radius: 8px; margin: 20px 0;">
-  `,
+    // Title that appears in the list and post page
+    title: "My Amazing Blog Post",
+    
+    // Short excerpt for the blog list (1-2 sentences)
+    excerpt: "A brief description of what this post is about.",
+    
+    // Main content (HTML supported)
+    content: `
+      <p>Your blog content goes here.</p>
+      
+      <h3>Section Title</h3>
+      <p>More content...</p>
+      
+      <img src="path/to/image.jpg" alt="Description" style="max-width: 100%; border-radius: 8px; margin: 20px 0;">
+    `,
+    
+    // Optional: Featured image URL (appears in list and at top of post)
+    featuredImage: "https://example.com/image.jpg"
+  };
   
-  // Optional: Featured image URL (appears in list and at top of post)
-  featuredImage: "https://example.com/image.jpg"
-};
+  // Register this blog post (DO NOT REMOVE THIS LINE)
+  if (typeof window.registerBlogPost === 'function') {
+    window.registerBlogPost(blogPost);
+  }
+})();
 ```
+
+**Important:** Always keep the registration code at the bottom!
 
 ### Step 2: Register Your Blog File
 

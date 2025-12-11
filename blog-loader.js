@@ -6,6 +6,11 @@
 // This will store all loaded blog posts
 let allBlogPosts = [];
 
+// Registration function called by each blog post file
+window.registerBlogPost = function(post) {
+  allBlogPosts.push(post);
+};
+
 // List of blog post files to load (add new blog files here)
 const blogFiles = [
   'blogs/example-blog-post.js',
@@ -23,13 +28,7 @@ async function loadBlogPosts() {
       await new Promise((resolve, reject) => {
         const script = document.createElement('script');
         script.src = file;
-        script.onload = () => {
-          // The blog file sets a global 'blogPost' variable
-          if (typeof blogPost !== 'undefined') {
-            allBlogPosts.push({...blogPost});
-          }
-          resolve();
-        };
+        script.onload = resolve;
         script.onerror = reject;
         document.head.appendChild(script);
       });
