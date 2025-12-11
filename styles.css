@@ -844,9 +844,9 @@ body:active {
   }
 
   .page-indicator {
-    font-size: 10px;
-    bottom: 15px;
-    left: 15px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   /* Prevent horizontal overflow on all elements */
