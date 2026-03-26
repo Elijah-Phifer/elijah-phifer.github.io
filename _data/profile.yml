@@ -35,7 +35,7 @@ short_bio: >-
    
   </p>
 
-portrait_url: /assets/images/photos/3887EB5E-1140-4393-A8EA-A09361D968C1_1_102_o.jpeg
+portrait_url: /assets/images/photos/2FA7E613-1678-4FA6-A7D9-141B42067DCD_1_105_c.jpeg
 portrait_caption: >-
   My headshot from when I was a tutor at Southeastern Louisiana University!
 
@@ -52,13 +52,13 @@ education:
   date: Aug. 2021 - May. 2025
 
 experience:
+- name: Louisiana State University
+  logo: /assets/images/badges/tiger_logo.png
+  position: Graduate Assistant at the RISE Lab
+  date: Aug. 2025 - present
 - name: Southeastern Louisiana University
   logo: /assets/images/badges/lion_logo.png
   position: Undergraduate Research Assistant at The Wright Lab
-  date: Jan. 2023 - May. 2025
-- name: Southeastern Louisiana University
-  logo: /assets/images/badges/lion_logo.png
-  position: Mathematics Tutor at The Tinsely Learning Center
   date: Jan. 2023 - May. 2025
 
 awards:
